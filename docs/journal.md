@@ -8,7 +8,7 @@ Add optional week headers to group days.
 
 ## Week 0: Project Setup and Planning + Initial Exploration (2026-03-02 – ?)
 
-## 2026-03-02
+### 2026-03-02
 - **What I did:** 
   - wrote a comprehensive project plan and roadmap in the [FINAL_DOC.md](final_doc.md).
   - wrote a detailed [knowledge management strategy](detailed/14-knowledge-management.md) and documentation structure.
@@ -28,4 +28,10 @@ Add optional week headers to group days.
   - finalize the keyword list and syntax design.
   - write a sample concept verification program to test the transpilation process in a new branch.
 
+### 2026-03-03
+- **What I did:**
+  - Added [overview](detailed/01-overview.md) and [development roadmap](detailed/07-development-roadmap.md) documents to the `detailed/` folder.
+- **Challenges:**
+- **Learnings:**
+- **Next steps:**
 ...
