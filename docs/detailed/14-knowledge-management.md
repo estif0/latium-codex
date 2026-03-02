@@ -3,7 +3,7 @@
 **Document ID:** `14-knowledge-management.md`  
 **Part of:** Detailed Documentation Series  
 **Audience:** Project lead, contributors  
-**Last Updated:** 03/02/2026
+**Last Updated:** 2026-03-02
 
 ---
 

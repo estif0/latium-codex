@@ -6,9 +6,9 @@ Add optional week headers to group days.
 
 ---
 
-## Week 0: Project Setup and Planning + Initial Exploration (2026-02-03 – ?)
+## Week 0: Project Setup and Planning + Initial Exploration (2026-03-02 – ?)
 
-## 2026-02-03
+## 2026-03-02
 - **What I did:** 
   - wrote a comprehensive project plan and roadmap in the [FINAL_DOC.md](final_doc.md).
   - wrote a detailed [knowledge management strategy](detailed/14-knowledge-management.md) and documentation structure.
