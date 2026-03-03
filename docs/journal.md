@@ -31,6 +31,7 @@ Add optional week headers to group days.
 ### 2026-03-03
 - **What I did:**
   - Added [overview](detailed/01-overview.md) and [development roadmap](detailed/07-development-roadmap.md) documents to the `detailed/` folder.
+  - Added [uv tooling reference](./kb/tools/uv-tooling.md) to the `kb/` folder.
 - **Challenges:**
 - **Learnings:**
 - **Next steps:**
