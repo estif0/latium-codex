@@ -47,6 +47,25 @@ Add optional week headers to group days.
 ### 2026-03-06
 
 - **What I did:**
+  - wrote a detailed appendix of keywords in [12-appendix-keywords.md](detailed/12-appendix-keywords.md) and made sure they are all valid Latin words with the correct meanings.
+  - went through the modules and checked for any name collisions or inconsistencies, and made sure that each function has a clear and distinct name that reflects its purpose and functionality. also considered using namespaces or prefixes to further differentiate functions across modules if needed.
+  - changed the folder structure of the repository to better reflect the modular design of the language and make it easier to package and distribute in the future.
+- **Challenges:**
+  - ensuring that all keywords are valid Latin words with the correct meanings, which required a lot of research and cross-referencing with Latin resources.
+  - checking for name collisions and inconsistencies across modules, which required careful review and attention to detail.
+  - refining on the best folder structure for the repository to balance modularity, clarity, and ease of use.
+- **Learnings:**
+  - the importance of a well‑defined and consistent keyword set for the language, which helps establish its identity and makes it more intuitive to use.
+  - the value of careful naming and organization of functions and modules to avoid confusion and improve code readability.
+  - the need for a clear and logical folder structure to support modular development and future packaging and distribution.
+- **Next steps:** 
+  - write sample programs and code snippets to extract syntax and semantics rules for the language, and use them to refine the transpilation process and architecture.
+  - continue fleshing out the detailed documentation, especially around the core transpilation process and architecture, and make sure it is clear, concise, and well‑structured.
+  - start prototyping the transpilation process with a simple concept verification program, and iterate based on learnings and feedback.
+
+### 2026-03-07
+
+- **What I did:**
 - **Challenges:**
 - **Learnings:**
 - **Next steps:**
