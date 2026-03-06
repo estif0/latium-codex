@@ -192,115 +192,118 @@ To balance timeline and future extensibility, each module is split into:
 
 ### 3.2.1. File I/O Module – `fasciculus`
 
-| Tier | Function                   | Latin Name                    | Description                         |
-| ---- | -------------------------- | ----------------------------- | ----------------------------------- |
-| 1    | Read entire file           | `lege(iter)`                  | Returns file content as string.     |
-| 1    | Write string to file       | `inscribe(iter, scriptum)`    | Writes string to file (overwrites). |
-| 1    | Append string to file      | `appone(iter, scriptum)`      | Appends string to file.             |
-| 1    | Remove file                | `dele(iter)`                  | Deletes file.                       |
-| 1    | Check if file exists       | `existit(iter)`               | Returns boolean.                    |
-| 2    | Open file (returns object) | `aperi(iter, modus)`          | Returns a file object.              |
-| 2    | Read from file object      | `file.lege([amplitudo])`      | Reads from open file.               |
-| 2    | Read line                  | `file.lege_lineam()`          | Reads one line.                     |
-| 2    | Read all lines             | `file.lege_lineas()`          | Reads all lines into a list.        |
-| 2    | Write to file object       | `file.inscribe(scriptum)`     | Writes to open file.                |
-| 2    | Write lines                | `file.inscribe_lineas(lista)` | Writes a list of lines.             |
-| 2    | Close file                 | `file.claude()`               | Closes the file.                    |
-| 2    | Flush buffer               | `file.consiste()`             | Flushes internal buffer.            |
-| 2    | Seek                       | `file.quaere(offset, unde)`   | Changes file position.              |
-| 2    | Tell position              | `file.dic()`                  | Returns current file position.      |
+| Tier | Function                   | Latin Name                    | Description                         | Python Equivalent                |
+| ---- | -------------------------- | ----------------------------- | ----------------------------------- | -------------------------------- |
+| 1    | Read entire file           | `lege(iter)`                  | Returns file content as string.     | `open(iter).read()`              |
+| 1    | Write string to file       | `inscribe(iter, scriptum)`    | Writes string to file (overwrites). | `open(iter,'w').write(scriptum)` |
+| 1    | Append string to file      | `appone(iter, scriptum)`      | Appends string to file.             | `open(iter,'a').write(scriptum)` |
+| 1    | Remove file                | `dele(iter)`                  | Deletes file.                       | `os.remove(iter)`                |
+| 1    | Check if file exists       | `existit(iter)`               | Returns boolean.                    | `os.path.exists(iter)`           |
+| 2    | Open file (returns object) | `aperi(iter, modus)`          | Returns a file object.              | `open(iter, modus)`              |
+| 2    | Read from file object      | `file.lege([amplitudo])`      | Reads from open file.               | `file.read([size])`              |
+| 2    | Read line                  | `file.lege_lineam()`          | Reads one line.                     | `file.readline()`                |
+| 2    | Read all lines             | `file.lege_lineas()`          | Reads all lines into a list.        | `file.readlines()`               |
+| 2    | Write to file object       | `file.inscribe(scriptum)`     | Writes to open file.                | `file.write(scriptum)`           |
+| 2    | Write lines                | `file.inscribe_lineas(lista)` | Writes a list of lines.             | `file.writelines(lista)`         |
+| 2    | Close file                 | `file.claude()`               | Closes the file.                    | `file.close()`                   |
+| 2    | Flush buffer               | `file.consiste()`             | Flushes internal buffer.            | `file.flush()`                   |
+| 2    | Seek                       | `file.quaere(offset, unde)`   | Changes file position.              | `file.seek(offset, whence)`      |
+| 2    | Tell position              | `file.dic()`                  | Returns current file position.      | `file.tell()`                    |
 
 ### 3.2.2. System Module – `systema` & Path Module – `via`
 
 #### `systema` (process and environment)
 
-| Tier | Function                 | Latin Name                   | Description                             |
-| ---- | ------------------------ | ---------------------------- | --------------------------------------- |
-| 1    | Execute command          | `curre(commando)`            | Runs command, returns stdout as string. |
-| 1    | Exit program             | `exi(code)`                  | Exits with given code.                  |
-| 1    | Get environment variable | `cape_ambitum(nomen)`        | Returns value or null.                  |
-| 1    | Set environment variable | `pone_ambitum(nomen, valor)` | Sets variable.                          |
-| 2    | Process object           | `Process` class              | More detailed process control.          |
+| Tier | Function                 | Latin Name                   | Description                             | Python Equivalent                          |
+| ---- | ------------------------ | ---------------------------- | --------------------------------------- | ------------------------------------------ |
+| 1    | Execute command          | `curre(commando)`            | Runs command, returns stdout as string. | `subprocess.run(..., capture_output=True)` |
+| 1    | Exit program             | `exi(code)`                  | Exits with given code.                  | `sys.exit(code)`                           |
+| 1    | Get environment variable | `cape_ambitum(nomen)`        | Returns value or null.                  | `os.environ.get(nomen)`                    |
+| 1    | Set environment variable | `pone_ambitum(nomen, valor)` | Sets variable.                          | `os.environ[nomen] = valor`                |
+| 2    | Process object           | `Process` class              | More detailed process control.          | `subprocess.Popen`                         |
 
 *Note: `ambitum` (environment) is the canonical Latin term for the concept of an environment variable. Use it consistently wherever "env" would appear in function names or documentation.*
 
 #### `via` (path manipulation)
 
-| Tier | Function        | Latin Name                  | Description                        |
-| ---- | --------------- | --------------------------- | ---------------------------------- |
-| 1    | Absolute path   | `via_absoluta(iter)`        | Returns absolute path.             |
-| 1    | Base name       | `via_basename(iter)`        | Returns final component of path.   |
-| 1    | Directory name  | `via_dirname(iter)`         | Returns parent directory.          |
-| 1    | Check existence | `via_existit(iter)`         | Returns boolean.                   |
-| 1    | Is file?        | `via_est_archivum(iter)`    | Returns boolean.                   |
-| 1    | Is directory?   | `via_est_directorium(iter)` | Returns boolean.                   |
-| 2    | Path object     | `Via` class                 | Object-oriented path manipulation. |
+| Tier | Function        | Latin Name                  | Description                        | Python Equivalent        |
+| ---- | --------------- | --------------------------- | ---------------------------------- | ------------------------ |
+| 1    | Absolute path   | `via_absoluta(iter)`        | Returns absolute path.             | `os.path.abspath(iter)`  |
+| 1    | Base name       | `via_basename(iter)`        | Returns final component of path.   | `os.path.basename(iter)` |
+| 1    | Directory name  | `via_dirname(iter)`         | Returns parent directory.          | `os.path.dirname(iter)`  |
+| 1    | Check existence | `via_existit(iter)`         | Returns boolean.                   | `os.path.exists(iter)`   |
+| 1    | Is file?        | `via_est_archivum(iter)`    | Returns boolean.                   | `os.path.isfile(iter)`   |
+| 1    | Is directory?   | `via_est_directorium(iter)` | Returns boolean.                   | `os.path.isdir(iter)`    |
+| 2    | Path object     | `Via` class                 | Object-oriented path manipulation. | `pathlib.Path`           |
 
 ### 3.2.3. Math Module – `numerus`
 
-| Tier | Function          | Latin Name           | Description                  |
-| ---- | ----------------- | -------------------- | ---------------------------- |
-| 1    | Add               | `addere(a, b)`       | Returns sum.                 |
-| 1    | Subtract          | `subtrahere(a, b)`   | Returns difference.          |
-| 1    | Multiply          | `multiplicare(a, b)` | Returns product.             |
-| 1    | Divide            | `dividere(a, b)`     | Returns quotient (float).    |
-| 1    | Power             | `potentia(a, b)`     | Returns a raised to b.       |
-| 1    | Square root       | `radix(a)`           | Returns square root.         |
-| 1    | Sine              | `sinus(angulus)`     | Returns sine.                |
-| 1    | Cosine            | `cosinus(angulus)`   | Returns cosine.              |
-| 1    | Natural logarithm | `logarithmus(x)`     | Returns ln(x).               |
-| 2    | Numerus object    | `Numerus` class      | Allows method chaining, etc. |
+*Note: Basic arithmetic uses standard operators directly: `+`, `-`, `*`, `/`, `//` (floor divide), `%` (modulo), `**` (power). The `numerus` module provides functions for operations not covered by operators.*
+
+| Tier | Function          | Latin Name             | Description                     | Python Equivalent   |
+| ---- | ----------------- | ---------------------- | ------------------------------- | ------------------- |
+| 1    | Absolute value    | `absolutus(a)`         | Returns absolute value.         | `abs(a)`            |
+| 1    | Square root       | `radix(a)`             | Returns square root.            | `math.sqrt(a)`      |
+| 1    | Floor             | `pavimentum(a)`        | Rounds down to nearest integer. | `math.floor(a)`     |
+| 1    | Ceiling           | `tectum(a)`            | Rounds up to nearest integer.   | `math.ceil(a)`      |
+| 1    | Round             | `rotunda(a, n)`        | Rounds to n decimal places.     | `round(a, n)`       |
+| 1    | Sine              | `sinus(angulus)`       | Returns sine (radians).         | `math.sin(angulus)` |
+| 1    | Cosine            | `cosinus(angulus)`     | Returns cosine (radians).       | `math.cos(angulus)` |
+| 1    | Tangent           | `tangens(angulus)`     | Returns tangent (radians).      | `math.tan(angulus)` |
+| 1    | Natural logarithm | `logarithmus(x)`       | Returns ln(x).                  | `math.log(x)`       |
+| 1    | Log base 10       | `logarithmus_decem(x)` | Returns log₁₀(x).               | `math.log10(x)`     |
+| 2    | Numerus object    | `Numerus` class        | Allows method chaining, etc.    | –                   |
 
 ### 3.2.4. String Module – `filum`
 
-| Tier | Function      | Latin Name                     | Description                          |
-| ---- | ------------- | ------------------------------ | ------------------------------------ |
-| 1    | Concatenate   | `coniungere(s1, s2)`           | Returns concatenated string.         |
-| 1    | Substring     | `excerpere(s, initium, finis)` | Returns substring.                   |
-| 1    | Length        | `longitudo(s)`                 | Returns integer length.              |
-| 1    | Split         | `findere(s, delimiter)`        | Returns list of strings.             |
-| 1    | Join          | `iungere(lista, separator)`    | Returns string.                      |
-| 1    | Format        | `formare(formato, ...)`        | Basic string formatting.             |
-| 1    | Trim          | `tondere(s)`                   | Removes leading/trailing whitespace. |
-| 1    | Uppercase     | `ad_maius(s)`                  | Returns string in uppercase.         |
-| 1    | Lowercase     | `ad_minus(s)`                  | Returns string in lowercase.         |
-| 1    | Replace       | `mutare(s, vetus, novus)`      | Returns string with substitution.    |
-| 1    | Contains      | `continet(s, pars)`            | Returns boolean.                     |
-| 1    | Starts with   | `a_capite(s, initium)`         | Returns boolean.                     |
-| 1    | Ends with     | `a_calce(s, finis)`            | Returns boolean.                     |
-| 2    | String object | `Filum` class                  | Methods like `s.coniungere()`, etc.  |
+| Tier | Function      | Latin Name                        | Description                          | Python Equivalent         |
+| ---- | ------------- | --------------------------------- | ------------------------------------ | ------------------------- |
+| 1    | Concatenate   | `coniungere(s1, s2)`              | Returns concatenated string.         | `s1 + s2`                 |
+| 1    | Substring     | `excerpere(s, initium, terminus)` | Returns substring.                   | `s[initium:terminus]`     |
+| 1    | Length        | `longitudo(s)`                    | Returns integer length.              | `len(s)`                  |
+| 1    | Split         | `findere(s, delimiter)`           | Returns list of strings.             | `s.split(delimiter)`      |
+| 1    | Join          | `iungere(lista, separator)`       | Returns string.                      | `separator.join(lista)`   |
+| 1    | Format        | `formare(formato, ...)`           | Basic string formatting.             | `formato.format(...)`     |
+| 1    | Trim          | `tondere(s)`                      | Removes leading/trailing whitespace. | `s.strip()`               |
+| 1    | Uppercase     | `ad_maius(s)`                     | Returns string in uppercase.         | `s.upper()`               |
+| 1    | Lowercase     | `ad_minus(s)`                     | Returns string in lowercase.         | `s.lower()`               |
+| 1    | Replace       | `mutare(s, vetus, novus)`         | Returns string with substitution.    | `s.replace(vetus, novus)` |
+| 1    | Contains      | `continet(s, pars)`               | Returns boolean.                     | `pars in s`               |
+| 1    | Starts with   | `a_capite(s, initium)`            | Returns boolean.                     | `s.startswith(initium)`   |
+| 1    | Ends with     | `a_calce(s, terminus)`            | Returns boolean.                     | `s.endswith(terminus)`    |
+| 2    | String object | `Filum` class                     | Methods like `s.coniungere()`, etc.  | –                         |
 
 ### 3.2.5. List Module – `collectio`
 
-| Tier | Function          | Latin Name                      | Description                     |
-| ---- | ----------------- | ------------------------------- | ------------------------------- |
-| 1    | Concatenate lists | `coniungere_listas(l1, l2)`     | Returns new list.               |
-| 1    | Slice             | `secare(lista, initium, finis)` | Returns slice.                  |
-| 1    | Sort              | `ordinare(lista)`               | Returns sorted list.            |
-| 1    | Append element    | `addere(lista, elementum)`      | Returns new list with appended. |
-| 1    | Remove element    | `removere(lista, elementum)`    | Returns new list without.       |
-| 1    | Length            | `longitudo_lista(lista)`        | Returns integer.                |
-| 2    | List object       | `Collectio` class               | Mutable list with methods.      |
+| Tier | Function          | Latin Name                         | Description                     | Python Equivalent                      |
+| ---- | ----------------- | ---------------------------------- | ------------------------------- | -------------------------------------- |
+| 1    | Concatenate lists | `coniungere(l1, l2)`               | Returns new list.               | `l1 + l2`                              |
+| 1    | Slice             | `secare(lista, initium, terminus)` | Returns slice.                  | `lista[initium:terminus]`              |
+| 1    | Sort              | `ordinare(lista)`                  | Returns sorted list.            | `sorted(lista)`                        |
+| 1    | Append element    | `addere(lista, elementum)`         | Returns new list with appended. | `lista + [elementum]`                  |
+| 1    | Remove element    | `removere(lista, elementum)`       | Returns new list without.       | `[x for x in lista if x != elementum]` |
+| 1    | Length            | `longitudo(lista)`                 | Returns integer.                | `len(lista)`                           |
+| 2    | List object       | `Collectio` class                  | Mutable list with methods.      | –                                      |
 
 ### 3.2.6. Dictionary Module – `dictio`
 
-| Tier | Function          | Latin Name                             | Description                |
-| ---- | ----------------- | -------------------------------------- | -------------------------- |
-| 1    | Add/Set           | `addere_dictio(dictio, clavis, valor)` | Returns updated dict.      |
-| 1    | Remove            | `removere_dictio(dictio, clavis)`      | Returns updated dict.      |
-| 1    | Has key           | `habere(dictio, clavis)`               | Returns boolean.           |
-| 1    | Get keys          | `claves(dictio)`                       | Returns list of keys.      |
-| 1    | Get values        | `valores(dictio)`                      | Returns list of values.    |
-| 2    | Dictionary object | `Dictio` class                         | Mutable dict with methods. |
+| Tier | Function          | Latin Name                      | Description                | Python Equivalent                                |
+| ---- | ----------------- | ------------------------------- | -------------------------- | ------------------------------------------------ |
+| 1    | Add/Set           | `addere(dictio, clavis, valor)` | Returns updated dict.      | `{**dictio, clavis: valor}`                      |
+| 1    | Remove            | `removere(dictio, clavis)`      | Returns updated dict.      | `{k:v for k,v in dictio.items() if k != clavis}` |
+| 1    | Has key           | `habere(dictio, clavis)`        | Returns boolean.           | `clavis in dictio`                               |
+| 1    | Get keys          | `claves(dictio)`                | Returns list of keys.      | `list(dictio.keys())`                            |
+| 1    | Get values        | `valores(dictio)`               | Returns list of values.    | `list(dictio.values())`                          |
+| 2    | Dictionary object | `Dictio` class                  | Mutable dict with methods. | –                                                |
 
 ### 3.2.7. DateTime Module – `tempus`
 
-| Tier | Function          | Latin Name                      | Description                    |
-| ---- | ----------------- | ------------------------------- | ------------------------------ |
-| 1    | Current datetime  | `nunc()`                        | Returns string representation. |
-| 1    | Format datetime   | `formare_tempus(tempus, forma)` | Returns formatted string.      |
-| 1    | Difference (days) | `differre(t1, t2)`              | Returns number of days.        |
-| 2    | DateTime object   | `Tempus` class                  | Objects with methods.          |
+| Tier | Function          | Latin Name                      | Description                    | Python Equivalent    |
+| ---- | ----------------- | ------------------------------- | ------------------------------ | -------------------- |
+| 1    | Current datetime  | `nunc()`                        | Returns string representation. | `datetime.now()`     |
+| 1    | Format datetime   | `formare_tempus(tempus, forma)` | Returns formatted string.      | `dt.strftime(forma)` |
+| 1    | Difference (days) | `differre(t1, t2)`              | Returns number of days.        | `(t2 - t1).days`     |
+| 2    | DateTime object   | `Tempus` class                  | Objects with methods.          | `datetime.datetime`  |
 
 ## 3.3. Import System
 
@@ -923,45 +926,58 @@ All notable changes to Latium Codex will be documented in this file.
 
 # 12. Appendix: Latin Keyword Candidates
 
-| Category         | English    | Latin (Tentative)      | Notes / Context         |
-| ---------------- | ---------- | ---------------------- | ----------------------- |
-| **Core**         | variable   | `res`                  |                         |
-|                  | function   | `munus`                |                         |
-|                  | if         | `si`                   |                         |
-|                  | else       | `aliter`               |                         |
-|                  | else if    | `aliter si`            |                         |
-|                  | while      | `dum`                  |                         |
-|                  | for        | `per`                  |                         |
-|                  | return     | `redde`                | imperative              |
-|                  | print      | `scribe`               | console output          |
-|                  | write      | `inscribe`             | file write              |
-|                  | read       | `lege`                 | file read               |
-|                  | run        | `curre`                | command execution       |
-|                  | true       | `verum`                |                         |
-|                  | false      | `falsum`               |                         |
-|                  | and        | `et`                   |                         |
-|                  | or         | `aut`                  |                         |
-|                  | not        | `non`                  |                         |
-| **Import**       | import     | `importa`              |                         |
-|                  | from       | `ex`                   |                         |
-|                  | as         | `ut`                   | alias                   |
-| **OOP (future)** | class      | `classis`              |                         |
-|                  | new        | `novus` / `crea`       | object creation         |
-|                  | is         | `est`                  | type check / instanceof |
-|                  | extends    | `ortus`                | inheritance (born from) |
-|                  | super      | `superus`              | parent call             |
-|                  | self       | `se`                   | reflexive pronoun       |
-|                  | override   | `supercede` / `obtege` | method override marker  |
-|                  | public     | `publicus`             | access modifier         |
-|                  | private    | `privatus`             | access modifier         |
-| **Modules**      | file I/O   | `fasciculus`           |                         |
-|                  | system     | `systema`              |                         |
-|                  | path       | `via`                  |                         |
-|                  | math       | `numerus`              |                         |
-|                  | string     | `filum`                |                         |
-|                  | list       | `collectio`            |                         |
-|                  | dictionary | `dictio`               |                         |
-|                  | datetime   | `tempus`               |                         |
+| Category         | English      | Latin (Tentative)      | Notes / Context                 |
+| ---------------- | ------------ | ---------------------- | ------------------------------- |
+| **Core**         | variable     | `res`                  |                                 |
+|                  | function     | `munus`                |                                 |
+|                  | if           | `si`                   |                                 |
+|                  | else         | `aliter`               |                                 |
+|                  | else if      | `aliter si`            |                                 |
+|                  | while        | `dum`                  |                                 |
+|                  | for          | `per`                  |                                 |
+|                  | return       | `redde`                | imperative                      |
+|                  | print        | `scribe`               | console output                  |
+|                  | write        | `inscribe`             | file write                      |
+|                  | read         | `lege`                 | file read                       |
+|                  | run          | `curre`                | command execution               |
+|                  | true         | `verum`                |                                 |
+|                  | false        | `falsum`               |                                 |
+|                  | and          | `et`                   |                                 |
+|                  | or           | `aut`                  |                                 |
+|                  | not          | `non`                  |                                 |
+|                  | break        | `abrumpe`              | exit loop early                 |
+|                  | continue     | `perge`                | skip to next iteration          |
+|                  | null/None    | `nihil`                | absence of value                |
+| **Import**       | import       | `importa`              |                                 |
+|                  | from         | `ex`                   |                                 |
+|                  | as           | `ut`                   | alias                           |
+| **OOP (future)** | class        | `classis`              |                                 |
+|                  | new          | `novus` / `crea`       | object creation                 |
+|                  | is           | `est`                  | type check / instanceof         |
+|                  | extends      | `ortus`                | inheritance (born from)         |
+|                  | super        | `superus`              | parent call                     |
+|                  | self         | `se`                   | reflexive pronoun               |
+|                  | override     | `supercede` / `obtege` | method override marker          |
+|                  | public       | `publicus`             | access modifier                 |
+|                  | private      | `privatus`             | access modifier                 |
+| **Modules**      | file I/O     | `fasciculus`           |                                 |
+|                  | system       | `systema`              |                                 |
+|                  | path         | `via`                  |                                 |
+|                  | math         | `numerus`              |                                 |
+|                  | string       | `filum`                |                                 |
+|                  | list         | `collectio`            |                                 |
+|                  | dictionary   | `dictio`               |                                 |
+|                  | datetime     | `tempus`               |                                 |
+| **Operators**    | +            | `+`                    | arithmetic; standard symbol     |
+|                  | -            | `-`                    | arithmetic; standard symbol     |
+|                  | *            | `*`                    | arithmetic; standard symbol     |
+|                  | /            | `/`                    | float division; standard symbol |
+|                  | //           | `//`                   | floor division; standard symbol |
+|                  | %            | `%`                    | modulo; standard symbol         |
+|                  | **           | `**`                   | power; standard symbol          |
+|                  | ==           | `==`                   | equality; standard symbol       |
+|                  | !=           | `!=`                   | inequality; standard symbol     |
+|                  | <, >, <=, >= | `<`, `>`, `<=`, `>=`   | comparison; standard symbols    |
 
 *Note: Final keyword selection will occur during Week 1 design phase, with input from Latin resources and thematic consistency.*
 
