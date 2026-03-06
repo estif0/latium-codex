@@ -75,7 +75,7 @@ This overview is part of the **detailed documentation series**. For deeper infor
 - [07-development-roadmap.md](07-development-roadmap.md) – The week‑by‑week plan for building the language.
 - [14-knowledge-management.md](14-knowledge-management.md) – How to use the documentation system, including the KB and journal.
 
-For a single comprehensive document, see [`../FINAL_DOC.md`](../FINAL_DOC.md).
+For a single comprehensive document, see [`../LATIUM_REFERENCE.md`](../LATIUM_REFERENCE.md).
 
 ---
 

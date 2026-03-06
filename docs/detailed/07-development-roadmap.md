@@ -267,4 +267,4 @@ The project follows [Semantic Versioning](https://semver.org/) from the start.
 
 ---
 
-*Back to [detailed index](index.md) or [final_doc.md](../FINAL_DOC.md).*
+*Back to [detailed index](index.md) or [LATIUM_REFERENCE.md](../LATIUM_REFERENCE.md).*

@@ -10,7 +10,7 @@ Add optional week headers to group days.
 
 ### 2026-03-02
 - **What I did:** 
-  - wrote a comprehensive project plan and roadmap in the [FINAL_DOC.md](final_doc.md).
+  - wrote a comprehensive project plan and roadmap in the [LATIUM_REFERENCE.md](LATIUM_REFERENCE.md).
   - wrote a detailed [knowledge management strategy](detailed/14-knowledge-management.md) and documentation structure.
   - set up the GitHub repository and docs file structure.
   - initialized and started using `journal.md`(current file) for daily logging.
@@ -32,6 +32,21 @@ Add optional week headers to group days.
 - **What I did:**
   - Added [overview](detailed/01-overview.md) and [development roadmap](detailed/07-development-roadmap.md) documents to the `detailed/` folder.
   - Added [uv tooling reference](./kb/tools/uv-tooling.md) to the `kb/` folder.
+- **Challenges:**
+  - balancing the need for comprehensive documentation with the desire to start coding and iterating quickly.
+  - ensuring that the documentation is clear, concise, and well‑structured to be useful for myself and others.
+  - deciding on the right level of detail for the overview and roadmap documents.
+- **Learnings:**
+  - the importance of having a clear and concise overview document to provide context and understanding of the project.
+  - modern python project management tools and practices can significantly improve development efficiency and code quality.
+- **Next steps:**
+ - continue fleshing out the detailed documentation, especially around the core transpilation process and architecture.
+  - start prototyping the transpilation process with a simple concept verification program.
+  - refine and expand the keyword list and syntax design based on learnings from prototyping.
+
+### 2026-03-06
+
+- **What I did:**
 - **Challenges:**
 - **Learnings:**
 - **Next steps:**

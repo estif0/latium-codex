@@ -68,7 +68,7 @@ We distinguish between **internal** and **external** documentation, and between 
   Examples: `journal.md`, `kb/`, `detailed/` files.
 
 - **Stable**: Updated only at milestones; serve as a snapshot or formal deliverable.  
-  Examples: `final_doc.md`, `CHANGELOG.md`, release‑tagged documentation.
+  Examples: `LATIUM_REFERENCE.md`, `CHANGELOG.md`, release‑tagged documentation.
 
 All documentation lives in the same repository, under `docs/` (except `CHANGELOG.md` and `.github/`). This ensures versioning and traceability.
 
@@ -78,7 +78,7 @@ All documentation lives in the same repository, under `docs/` (except `CHANGELOG
 
 ```
 docs/
-├── final_doc.md                     # Comprehensive overview (stable)
+├── LATIUM_REFERENCE.md              # Comprehensive overview (stable)
 ├── detailed/                         # Modular deep‑dives (living)
 │   ├── 01-overview.md
 │   ├── 02-design-decisions.md
@@ -547,4 +547,4 @@ Use this document as a reference whenever you need to decide where to put a new 
 
 ---
 
-*Back to [detailed index](index.md) or [final_doc.md](../FINAL_DOC.md).*
+*Back to [detailed index](index.md) or [LATIUM_REFERENCE.md](../LATIUM_REFERENCE.md).*
