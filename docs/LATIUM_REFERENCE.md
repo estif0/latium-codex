@@ -926,6 +926,8 @@ All notable changes to Latium Codex will be documented in this file.
 
 # 12. Appendix: Latin Keyword Candidates
 
+> **Canonical version:** [`docs/detailed/12-appendix-keywords.md`](detailed/12-appendix-keywords.md) — keep that file as the authoritative reference. The table below is a summary copy.
+
 | Category         | English      | Latin (Tentative)      | Notes / Context                 |
 | ---------------- | ------------ | ---------------------- | ------------------------------- |
 | **Core**         | variable     | `res`                  |                                 |

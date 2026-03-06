@@ -27,5 +27,4 @@ These documents supplement the main `README.md` and provide in-depth information
 ## Ecosystem
 - [09-ecosystem-components.md](09-ecosystem-components.md) – VS Code extension, website, GitHub strategy, documentation deliverables.
 - [11-changelog.md](11-changelog.md) – Version history (also at root `/CHANGELOG.md`).
-- [13-srs-template.md](13-srs-template.md) – Software Requirements Specification template.
 - [15-license-security.md](15-license-security.md) – License and security notes.
