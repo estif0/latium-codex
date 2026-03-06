@@ -85,9 +85,6 @@
 - [11. Changelog](#11-changelog)
   - [11.1. Format and Maintenance](#111-format-and-maintenance)
 - [12. Appendix: Latin Keyword Candidates](#12-appendix-latin-keyword-candidates)
-- [13. Project Proposal / Software Requirements Specification (SRS)](#13-project-proposal--software-requirements-specification-srs)
-  - [13.1. Purpose of This Document](#131-purpose-of-this-document)
-  - [13.2. SRS Template for Latium Codex](#132-srs-template-for-latium-codex)
 - [14. Knowledge Management and Documentation for Future Reference](#14-knowledge-management-and-documentation-for-future-reference)
   - [14.1. Project Journal / Development Log](#141-project-journal--development-log)
   - [14.2. Personal Knowledge Base (KB)](#142-personal-knowledge-base-kb)
@@ -169,20 +166,20 @@
 
 ## 3.1. Core Language Constructs
 
-| Feature           | Description                                      | Example Keyword (tentative)     |
-| ----------------- | ------------------------------------------------ | ------------------------------- |
-| Variables         | Mutable variables with optional type annotations | `res` (thing)                   |
-| Functions         | Reusable blocks of code                          | `munus` (task)                  |
-| Conditionals      | `if`, `else if`, `else`                          | `si`, `aliter si`, `aliter`     |
-| Loops             | `while` and `for`-each style loops               | `dum` (while), `per` (for)      |
-| Scoping           | Lexical scoping with nested blocks               | –                               |
-| File I/O          | Read, write, append files                        | `lege` (read), `scribe` (write) |
-| Command Execution | Run system commands                              | `curre` (run)                   |
-| Comments          | Single-line and multi-line                       | `#` and `/* */`                 |
-| Return            | Return value from function                       | `redde` (give back)             |
-| Print             | Output to console                                | `scribe` (write)                |
-| True/False        | Boolean literals                                 | `verum`, `falsum`               |
-| Logical Operators | and, or, not                                     | `et`, `aut`, `non`              |
+| Feature           | Description                                      | Example Keyword (tentative)       |
+| ----------------- | ------------------------------------------------ | --------------------------------- |
+| Variables         | Mutable variables with optional type annotations | `res` (thing)                     |
+| Functions         | Reusable blocks of code                          | `munus` (task)                    |
+| Conditionals      | `if`, `else if`, `else`                          | `si`, `aliter si`, `aliter`       |
+| Loops             | `while` and `for`-each style loops               | `dum` (while), `per` (for)        |
+| Scoping           | Lexical scoping with nested blocks               | –                                 |
+| File I/O          | Read, write, append files                        | `lege` (read), `inscribe` (write) |
+| Command Execution | Run system commands                              | `curre` (run)                     |
+| Comments          | Single-line and multi-line                       | `#` and `/* */`                   |
+| Return            | Return value from function                       | `redde` (give back)               |
+| Print             | Output to console                                | `scribe` (write)                  |
+| True/False        | Boolean literals                                 | `verum`, `falsum`                 |
+| Logical Operators | and, or, not                                     | `et`, `aut`, `non`                |
 
 ## 3.2. Standard Library (Modular, Built-in)
 
@@ -195,35 +192,37 @@ To balance timeline and future extensibility, each module is split into:
 
 ### 3.2.1. File I/O Module – `fasciculus`
 
-| Tier | Function                   | Latin Name                  | Description                         |
-| ---- | -------------------------- | --------------------------- | ----------------------------------- |
-| 1    | Read entire file           | `lege(iter)`                | Returns file content as string.     |
-| 1    | Write string to file       | `scribe(iter, scriptum)`    | Writes string to file (overwrites). |
-| 1    | Append string to file      | `appone(iter, scriptum)`    | Appends string to file.             |
-| 1    | Remove file                | `remove(iter)`              | Deletes file.                       |
-| 1    | Check if file exists       | `existit(iter)`             | Returns boolean.                    |
-| 2    | Open file (returns object) | `aperi(iter, modus)`        | Returns a file object.              |
-| 2    | Read from file object      | `file.lege([amplitudo])`    | Reads from open file.               |
-| 2    | Read line                  | `file.lege_lineam()`        | Reads one line.                     |
-| 2    | Read all lines             | `file.lege_lineas()`        | Reads all lines into a list.        |
-| 2    | Write to file object       | `file.scribe(scriptum)`     | Writes to open file.                |
-| 2    | Write lines                | `file.scribe_lineas(lista)` | Writes a list of lines.             |
-| 2    | Close file                 | `file.claude()`             | Closes the file.                    |
-| 2    | Flush buffer               | `file.consiste()`           | Flushes internal buffer.            |
-| 2    | Seek                       | `file.quaere(offset, unde)` | Changes file position.              |
-| 2    | Tell position              | `file.dic()`                | Returns current file position.      |
+| Tier | Function                   | Latin Name                    | Description                         |
+| ---- | -------------------------- | ----------------------------- | ----------------------------------- |
+| 1    | Read entire file           | `lege(iter)`                  | Returns file content as string.     |
+| 1    | Write string to file       | `inscribe(iter, scriptum)`    | Writes string to file (overwrites). |
+| 1    | Append string to file      | `appone(iter, scriptum)`      | Appends string to file.             |
+| 1    | Remove file                | `dele(iter)`                  | Deletes file.                       |
+| 1    | Check if file exists       | `existit(iter)`               | Returns boolean.                    |
+| 2    | Open file (returns object) | `aperi(iter, modus)`          | Returns a file object.              |
+| 2    | Read from file object      | `file.lege([amplitudo])`      | Reads from open file.               |
+| 2    | Read line                  | `file.lege_lineam()`          | Reads one line.                     |
+| 2    | Read all lines             | `file.lege_lineas()`          | Reads all lines into a list.        |
+| 2    | Write to file object       | `file.inscribe(scriptum)`     | Writes to open file.                |
+| 2    | Write lines                | `file.inscribe_lineas(lista)` | Writes a list of lines.             |
+| 2    | Close file                 | `file.claude()`               | Closes the file.                    |
+| 2    | Flush buffer               | `file.consiste()`             | Flushes internal buffer.            |
+| 2    | Seek                       | `file.quaere(offset, unde)`   | Changes file position.              |
+| 2    | Tell position              | `file.dic()`                  | Returns current file position.      |
 
 ### 3.2.2. System Module – `systema` & Path Module – `via`
 
 #### `systema` (process and environment)
 
-| Tier | Function                 | Latin Name              | Description                             |
-| ---- | ------------------------ | ----------------------- | --------------------------------------- |
-| 1    | Execute command          | `curre(commando)`       | Runs command, returns stdout as string. |
-| 1    | Exit program             | `exi(code)`             | Exits with given code.                  |
-| 1    | Get environment variable | `get_env(nomen)`        | Returns value or null.                  |
-| 1    | Set environment variable | `set_env(nomen, valor)` | Sets variable.                          |
-| 2    | Process object           | `Process` class         | More detailed process control.          |
+| Tier | Function                 | Latin Name                   | Description                             |
+| ---- | ------------------------ | ---------------------------- | --------------------------------------- |
+| 1    | Execute command          | `curre(commando)`            | Runs command, returns stdout as string. |
+| 1    | Exit program             | `exi(code)`                  | Exits with given code.                  |
+| 1    | Get environment variable | `cape_ambitum(nomen)`        | Returns value or null.                  |
+| 1    | Set environment variable | `pone_ambitum(nomen, valor)` | Sets variable.                          |
+| 2    | Process object           | `Process` class              | More detailed process control.          |
+
+*Note: `ambitum` (environment) is the canonical Latin term for the concept of an environment variable. Use it consistently wherever "env" would appear in function names or documentation.*
 
 #### `via` (path manipulation)
 
@@ -254,15 +253,22 @@ To balance timeline and future extensibility, each module is split into:
 
 ### 3.2.4. String Module – `filum`
 
-| Tier | Function      | Latin Name                     | Description                         |
-| ---- | ------------- | ------------------------------ | ----------------------------------- |
-| 1    | Concatenate   | `coniungere(s1, s2)`           | Returns concatenated string.        |
-| 1    | Substring     | `excerpere(s, initium, finis)` | Returns substring.                  |
-| 1    | Length        | `longitudo(s)`                 | Returns integer length.             |
-| 1    | Split         | `findere(s, delimiter)`        | Returns list of strings.            |
-| 1    | Join          | `iungere(lista, separator)`    | Returns string.                     |
-| 1    | Format        | `formare(formato, ...)`        | Basic string formatting.            |
-| 2    | String object | `Filum` class                  | Methods like `s.coniungere()`, etc. |
+| Tier | Function      | Latin Name                     | Description                          |
+| ---- | ------------- | ------------------------------ | ------------------------------------ |
+| 1    | Concatenate   | `coniungere(s1, s2)`           | Returns concatenated string.         |
+| 1    | Substring     | `excerpere(s, initium, finis)` | Returns substring.                   |
+| 1    | Length        | `longitudo(s)`                 | Returns integer length.              |
+| 1    | Split         | `findere(s, delimiter)`        | Returns list of strings.             |
+| 1    | Join          | `iungere(lista, separator)`    | Returns string.                      |
+| 1    | Format        | `formare(formato, ...)`        | Basic string formatting.             |
+| 1    | Trim          | `tondere(s)`                   | Removes leading/trailing whitespace. |
+| 1    | Uppercase     | `ad_maius(s)`                  | Returns string in uppercase.         |
+| 1    | Lowercase     | `ad_minus(s)`                  | Returns string in lowercase.         |
+| 1    | Replace       | `mutare(s, vetus, novus)`      | Returns string with substitution.    |
+| 1    | Contains      | `continet(s, pars)`            | Returns boolean.                     |
+| 1    | Starts with   | `a_capite(s, initium)`         | Returns boolean.                     |
+| 1    | Ends with     | `a_calce(s, finis)`            | Returns boolean.                     |
+| 2    | String object | `Filum` class                  | Methods like `s.coniungere()`, etc.  |
 
 ### 3.2.5. List Module – `collectio`
 
@@ -558,7 +564,7 @@ This roadmap provides a concrete, week-by-week plan with concepts to learn, task
 
 **Implementation**:
 - Lexer, parser, AST, transpiler that outputs Python.
-- Should take about 1 week (4-6 hours).
+- Should take about 1 week (18-20 hours).
 
 **Version**: v0.1.0 (alpha)
 
@@ -762,9 +768,9 @@ The project follows [Semantic Versioning](https://semver.org/) from the start.
 | Class            | `classis`                  | Defines a class.                     |
 | Constructor      | `constructor`              | Special method for object creation.  |
 | Method           | `munus` (same as function) | Method definition inside class.      |
-| Self reference   | `self`                     | Reference to current instance.       |
-| Inheritance      | `ex` (from)                | Single inheritance.                  |
-| Super call       | `super`                    | Call parent class method.            |
+| Self reference   | `se`                       | Reference to current instance.       |
+| Inheritance      | `ortus` (born from)        | Single inheritance.                  |
+| Super call       | `superus`                  | Call parent class method.            |
 | Override         | `supercede` / `obtege`     | Explicit override marker (optional). |
 | Dynamic dispatch | –                          | Virtual method calls.                |
 | Public/Private   | `publicus` / `privatus`    | Access modifiers (future).           |
@@ -904,7 +910,7 @@ All notable changes to Latium Codex will be documented in this file.
 ### Fixed
 - Bug in function scope resolution.
 
-## [1.0.0] - 2025-04-01
+## [1.0.0] - 2026-03-06
 ### Added
 - Initial release of Latium Codex.
 - Core language features: variables, functions, conditionals, loops.
@@ -917,113 +923,47 @@ All notable changes to Latium Codex will be documented in this file.
 
 # 12. Appendix: Latin Keyword Candidates
 
-| Category         | English    | Latin (Tentative)      | Notes / Context           |
-| ---------------- | ---------- | ---------------------- | ------------------------- |
-| **Core**         | variable   | `res`                  |                           |
-|                  | function   | `munus`                |                           |
-|                  | if         | `si`                   |                           |
-|                  | else       | `aliter`               |                           |
-|                  | else if    | `aliter si`            |                           |
-|                  | while      | `dum`                  |                           |
-|                  | for        | `per`                  |                           |
-|                  | return     | `redde`                | imperative                |
-|                  | print      | `scribe`               | also file write           |
-|                  | read       | `lege`                 | file read                 |
-|                  | run        | `curre`                | command execution         |
-|                  | true       | `verum`                |                           |
-|                  | false      | `falsum`               |                           |
-|                  | and        | `et`                   |                           |
-|                  | or         | `aut`                  |                           |
-|                  | not        | `non`                  |                           |
-| **Import**       | import     | `importa`              |                           |
-|                  | from       | `ex`                   | also used for inheritance |
-|                  | as         | `ut`                   | alias                     |
-| **OOP (future)** | class      | `classis`              |                           |
-|                  | new        | `novus` / `crea`       | object creation           |
-|                  | is         | `est`                  | type check / instanceof   |
-|                  | extends    | `extendit` / `ex`      | inheritance               |
-|                  | super      | `super`                | parent call               |
-|                  | self       | `self`                 | common term               |
-|                  | override   | `supercede` / `obtege` | method override marker    |
-|                  | public     | `publicus`             | access modifier           |
-|                  | private    | `privatus`             | access modifier           |
-| **Modules**      | file I/O   | `fasciculus`           |                           |
-|                  | system     | `systema`              |                           |
-|                  | path       | `via`                  |                           |
-|                  | math       | `numerus`              |                           |
-|                  | string     | `filum`                |                           |
-|                  | list       | `collectio`            |                           |
-|                  | dictionary | `dictio`               |                           |
-|                  | datetime   | `tempus`               |                           |
+| Category         | English    | Latin (Tentative)      | Notes / Context         |
+| ---------------- | ---------- | ---------------------- | ----------------------- |
+| **Core**         | variable   | `res`                  |                         |
+|                  | function   | `munus`                |                         |
+|                  | if         | `si`                   |                         |
+|                  | else       | `aliter`               |                         |
+|                  | else if    | `aliter si`            |                         |
+|                  | while      | `dum`                  |                         |
+|                  | for        | `per`                  |                         |
+|                  | return     | `redde`                | imperative              |
+|                  | print      | `scribe`               | console output          |
+|                  | write      | `inscribe`             | file write              |
+|                  | read       | `lege`                 | file read               |
+|                  | run        | `curre`                | command execution       |
+|                  | true       | `verum`                |                         |
+|                  | false      | `falsum`               |                         |
+|                  | and        | `et`                   |                         |
+|                  | or         | `aut`                  |                         |
+|                  | not        | `non`                  |                         |
+| **Import**       | import     | `importa`              |                         |
+|                  | from       | `ex`                   |                         |
+|                  | as         | `ut`                   | alias                   |
+| **OOP (future)** | class      | `classis`              |                         |
+|                  | new        | `novus` / `crea`       | object creation         |
+|                  | is         | `est`                  | type check / instanceof |
+|                  | extends    | `ortus`                | inheritance (born from) |
+|                  | super      | `superus`              | parent call             |
+|                  | self       | `se`                   | reflexive pronoun       |
+|                  | override   | `supercede` / `obtege` | method override marker  |
+|                  | public     | `publicus`             | access modifier         |
+|                  | private    | `privatus`             | access modifier         |
+| **Modules**      | file I/O   | `fasciculus`           |                         |
+|                  | system     | `systema`              |                         |
+|                  | path       | `via`                  |                         |
+|                  | math       | `numerus`              |                         |
+|                  | string     | `filum`                |                         |
+|                  | list       | `collectio`            |                         |
+|                  | dictionary | `dictio`               |                         |
+|                  | datetime   | `tempus`               |                         |
 
 *Note: Final keyword selection will occur during Week 1 design phase, with input from Latin resources and thematic consistency.*
-
----
-
-# 13. Project Proposal / Software Requirements Specification (SRS)
-
-## 13.1. Purpose of This Document
-
-A Software Requirements Specification (SRS) serves as a formal proposal and blueprint for the project. It clarifies scope, requirements, and design before implementation, and can be used for client communication or as a personal reference.
-
-## 13.2. SRS Template for Latium Codex
-
-Create a file `docs/proposals/SRS.md` with the following structure:
-
-```
-# Latium Codex – Software Requirements Specification
-
-## 1. Introduction
-   - 1.1 Purpose
-   - 1.2 Scope
-   - 1.3 Definitions and Acronyms
-   - 1.4 References (course material, similar projects)
-
-## 2. Overall Description
-   - 2.1 Product Perspective
-   - 2.2 User Characteristics
-   - 2.3 Operating Environment
-   - 2.4 Design and Implementation Constraints
-   - 2.5 Assumptions and Dependencies
-
-## 3. System Features
-   - 3.1 Core Language (v1.0)
-        - 3.1.1 Variables and Types
-        - 3.1.2 Expressions
-        - 3.1.3 Control Structures
-        - 3.1.4 Functions
-        - 3.1.5 File I/O and Automation
-   - 3.2 Standard Library (Tier 1)
-   - 3.3 REPL and CLI
-   - 3.4 Tooling (VS Code extension, website)
-   - 3.5 Future Extensions (OOP, functional, etc.)
-
-## 4. External Interface Requirements
-   - 4.1 User Interfaces (CLI, REPL)
-   - 4.2 Hardware Interfaces (none)
-   - 4.3 Software Interfaces (Python runtime)
-   - 4.4 Communication Interfaces (none)
-
-## 5. Non-Functional Requirements
-   - 5.1 Performance
-   - 5.2 Reliability
-   - 5.3 Availability
-   - 5.4 Security (note about command execution)
-   - 5.5 Maintainability
-   - 5.6 Portability
-
-## 6. Development Plan
-   - 6.1 Methodology (incremental, 6-week roadmap)
-   - 6.2 Tools and Technologies (uv, pnpm, GitHub Actions)
-   - 6.3 Versioning Strategy (SemVer, alpha/beta)
-   - 6.4 Testing Strategy
-   - 6.5 Documentation Plan
-
-## 7. Appendices
-   - A. Grammar (BNF)
-   - B. Keyword List
-   - C. References
-```
 
 ---
 
