@@ -337,49 +337,72 @@ To balance timeline and future extensibility, each module is split into:
 
 ```
 latium-codex/
-├── compiler/                 # Python source for lexer, parser, transpiler, CLI
-│   ├── src/
-│   │   ├── lexer/
-│   │   ├── parser/
-│   │   ├── ast/
-│   │   ├── transpiler/
-│   │   ├── stdlib/           # Python implementation of standard library (Tier 1)
-│   │   ├── repl/
-│   │   ├── cli/
-│   │   └── utils/
-│   ├── tests/
-│   │   ├── unit/
-│   │   └── integration/
-│   ├── pyproject.toml
-│   └── README.md
-├── vscode-extension/         # VS Code extension (TypeScript)
+├── src/                               # Source root (standard location)
+│   └── latium/                        # Main package (importable as 'latium')
+│       ├── __init__.py                 # Makes 'latium' a package
+│       ├── lexer/                      # Lexical analysis
+│       │   ├── __init__.py
+│       │   └── ...                     # Lexer implementation files
+│       ├── parser/                     # Syntax analysis
+│       │   ├── __init__.py
+│       │   └── ...
+│       ├── ast/                        # Abstract Syntax Tree nodes
+│       │   ├── __init__.py
+│       │   └── ...
+│       ├── transpiler/                  # Python code generation
+│       │   ├── __init__.py
+│       │   └── ...
+│       ├── stdlib/                      # Standard library (Tier 1)
+│       │   ├── __init__.py
+│       │   └── ...                     # One file per module (fasciculus.py, etc.)
+│       ├── repl/                        # Interactive REPL
+│       │   ├── __init__.py
+│       │   └── ...
+│       ├── cli/                         # Command-line interface
+│       │   ├── __init__.py
+│       │   └── ...                     # CLI entry point and subcommands
+│       └── utils/                       # Shared utilities
+│           ├── __init__.py
+│           └── ...                     # ErrorReporter, helpers, etc.
+├── tests/                               # All tests
+│   ├── __init__.py
+│   ├── unit/                            # Unit tests (mirror src structure)
+│   │   ├── test_lexer/
+│   │   ├── test_parser/
+│   │   └── ...
+│   └── integration/                      # Integration tests
+│       ├── test_programs/
+│       └── ...
+├── vscode-extension/                     # VS Code extension (TypeScript)
 │   ├── package.json
 │   ├── src/
 │   └── syntaxes/
-├── website/                  # Next.js site (TypeScript) with Fumadocs
+├── website/                              # Next.js site with Fumadocs
 │   ├── package.json
 │   ├── pages/
 │   └── components/
-├── docs/                     # Documentation
-│   ├── user/                 # User manual source
-│   ├── dev/                  # Developer manual source
-│   ├── proposals/            # SRS, design docs
-│   ├── kb/                   # Personal knowledge base (internal)
-│   └── journal.md            # Development log
-├── examples/                 # Sample .lcdx programs
-├── scripts/                  # Build, test, release scripts
+├── docs/                                 # All documentation
+│   ├── user/                             # End-user documentation
+│   ├── dev/                              # Contributor documentation
+│   ├── proposals/                        # Design docs, SRS
+│   ├── kb/                               # Personal knowledge base
+│   └── journal.md                        # Development log
+├── examples/                             # Sample .lcdx programs
+├── scripts/                              # Utility scripts
 │   ├── build.sh
 │   ├── test.sh
 │   └── release.sh
-├── .github/
-│   └── workflows/
-│       ├── test.yml
-│       └── release.yml
-├── .gitignore
+├── pyproject.toml                        # Build configuration (Python)
 ├── README.md
 ├── CONTRIBUTING.md
 ├── LICENSE
-└── .github/copilot-instructions.md
+├── .gitignore
+├── .github/
+│   ├── workflows/
+│   │   ├── test.yml
+│   │   └── release.yml
+│   └── copilot-instructions.md           # AI context
+└── CHANGELOG.md                           # Version history
 ```
 
 ## 4.2. AST Design Principles

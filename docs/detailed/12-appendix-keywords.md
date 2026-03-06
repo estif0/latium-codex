@@ -23,41 +23,41 @@ This appendix is the single authoritative reference for every Latin name in Lati
 
 ## 1. Core Language Keywords
 
-| Category         | English      | Latin (Tentative)      | Notes                           |
-| ---------------- | ------------ | ---------------------- | ------------------------------- |
-| **Core**         | variable     | `res`                  |                                 |
-|                  | function     | `munus`                |                                 |
-|                  | if           | `si`                   |                                 |
-|                  | else         | `aliter`               |                                 |
-|                  | else if      | `aliter si`            |                                 |
-|                  | while        | `dum`                  |                                 |
-|                  | for          | `per`                  |                                 |
-|                  | return       | `redde`                | imperative of reddere           |
-|                  | print        | `scribe`               | console output only             |
-|                  | write        | `inscribe`             | file write only                 |
-|                  | read         | `lege`                 | file read                       |
-|                  | run          | `curre`                | command execution               |
-|                  | true         | `verum`                |                                 |
-|                  | false        | `falsum`               |                                 |
-|                  | and          | `et`                   |                                 |
-|                  | or           | `aut`                  |                                 |
-|                  | not          | `non`                  |                                 |
-|                  | break        | `abrumpe`              | exit loop early                 |
-|                  | continue     | `perge`                | skip to next iteration          |
-|                  | null/None    | `nihil`                | absence of value                |
-|                  | end block    | `finis`                | optional closing keyword; **reserved — do not use as identifier** |
-| **Import**       | import       | `importa`              |                                 |
-|                  | from         | `ex`                   |                                 |
-|                  | as           | `ut`                   | alias                           |
-| **OOP (future)** | class        | `classis`              |                                 |
-|                  | new          | `novus` / `crea`       | object creation                 |
-|                  | is           | `est`                  | type check / instanceof         |
-|                  | extends      | `ortus`                | inheritance; "born from"        |
-|                  | super        | `superus`              | parent class call               |
-|                  | self         | `se`                   | reflexive pronoun               |
-|                  | override     | `supercede` / `obtege` | method override marker (optional) |
-|                  | public       | `publicus`             | access modifier                 |
-|                  | private      | `privatus`             | access modifier                 |
+| Category         | English   | Latin (Tentative)      | Notes                                                             |
+| ---------------- | --------- | ---------------------- | ----------------------------------------------------------------- |
+| **Core**         | variable  | `res`                  |                                                                   |
+|                  | function  | `munus`                |                                                                   |
+|                  | if        | `si`                   |                                                                   |
+|                  | else      | `aliter`               |                                                                   |
+|                  | else if   | `aliter si`            |                                                                   |
+|                  | while     | `dum`                  |                                                                   |
+|                  | for       | `per`                  |                                                                   |
+|                  | return    | `redde`                | imperative of reddere                                             |
+|                  | print     | `scribe`               | console output only                                               |
+|                  | write     | `inscribe`             | file write only                                                   |
+|                  | read      | `lege`                 | file read                                                         |
+|                  | run       | `curre`                | command execution                                                 |
+|                  | true      | `verum`                |                                                                   |
+|                  | false     | `falsum`               |                                                                   |
+|                  | and       | `et`                   |                                                                   |
+|                  | or        | `aut`                  |                                                                   |
+|                  | not       | `non`                  |                                                                   |
+|                  | break     | `abrumpe`              | exit loop early                                                   |
+|                  | continue  | `perge`                | skip to next iteration                                            |
+|                  | null/None | `nihil`                | absence of value                                                  |
+|                  | end block | `finis`                | optional closing keyword; **reserved — do not use as identifier** |
+| **Import**       | import    | `importa`              |                                                                   |
+|                  | from      | `ex`                   |                                                                   |
+|                  | as        | `ut`                   | alias                                                             |
+| **OOP (future)** | class     | `classis`              |                                                                   |
+|                  | new       | `novus` / `crea`       | object creation                                                   |
+|                  | is        | `est`                  | type check / instanceof                                           |
+|                  | extends   | `ortus`                | inheritance; "born from"                                          |
+|                  | super     | `superus`              | parent class call                                                 |
+|                  | self      | `se`                   | reflexive pronoun                                                 |
+|                  | override  | `supercede` / `obtege` | method override marker (optional)                                 |
+|                  | public    | `publicus`             | access modifier                                                   |
+|                  | private   | `privatus`             | access modifier                                                   |
 
 ---
 
@@ -65,18 +65,18 @@ This appendix is the single authoritative reference for every Latin name in Lati
 
 All operators use standard symbols. Latin names are not used for operators.
 
-| Operator     | Symbol(s)            | Description                  |
-| ------------ | -------------------- | ---------------------------- |
-| Add          | `+`                  | Arithmetic addition          |
-| Subtract     | `-`                  | Arithmetic subtraction       |
-| Multiply     | `*`                  | Arithmetic multiplication    |
-| Divide       | `/`                  | Float division               |
-| Floor divide | `//`                 | Integer (floor) division     |
-| Modulo       | `%`                  | Remainder                    |
-| Power        | `**`                 | Exponentiation               |
-| Equal        | `==`                 | Equality check               |
-| Not equal    | `!=`                 | Inequality check             |
-| Comparison   | `<`, `>`, `<=`, `>=` | Relational comparisons       |
+| Operator     | Symbol(s)            | Description               |
+| ------------ | -------------------- | ------------------------- |
+| Add          | `+`                  | Arithmetic addition       |
+| Subtract     | `-`                  | Arithmetic subtraction    |
+| Multiply     | `*`                  | Arithmetic multiplication |
+| Divide       | `/`                  | Float division            |
+| Floor divide | `//`                 | Integer (floor) division  |
+| Modulo       | `%`                  | Remainder                 |
+| Power        | `**`                 | Exponentiation            |
+| Equal        | `==`                 | Equality check            |
+| Not equal    | `!=`                 | Inequality check          |
+| Comparison   | `<`, `>`, `<=`, `>=` | Relational comparisons    |
 
 ---
 
@@ -180,15 +180,15 @@ All operators use standard symbols. Latin names are not used for operators.
 
 ### 4.6. `collectio` – List
 
-| Tier | Function          | Latin Name                         | Description                     | Python Equivalent                       |
-| ---- | ----------------- | ---------------------------------- | ------------------------------- | --------------------------------------- |
-| 1    | Concatenate lists | `coniungere(l1, l2)`               | Returns new list.               | `l1 + l2`                               |
-| 1    | Slice             | `secare(lista, initium, terminus)` | Returns slice.                  | `lista[initium:terminus]`               |
-| 1    | Sort              | `ordinare(lista)`                  | Returns sorted list.            | `sorted(lista)`                         |
-| 1    | Append element    | `addere(lista, elementum)`         | Returns new list with appended. | `lista + [elementum]`                   |
+| Tier | Function          | Latin Name                         | Description                     | Python Equivalent                      |
+| ---- | ----------------- | ---------------------------------- | ------------------------------- | -------------------------------------- |
+| 1    | Concatenate lists | `coniungere(l1, l2)`               | Returns new list.               | `l1 + l2`                              |
+| 1    | Slice             | `secare(lista, initium, terminus)` | Returns slice.                  | `lista[initium:terminus]`              |
+| 1    | Sort              | `ordinare(lista)`                  | Returns sorted list.            | `sorted(lista)`                        |
+| 1    | Append element    | `addere(lista, elementum)`         | Returns new list with appended. | `lista + [elementum]`                  |
 | 1    | Remove element    | `removere(lista, elementum)`       | Returns new list without.       | `[x for x in lista if x != elementum]` |
-| 1    | Length            | `longitudo(lista)`                 | Returns integer.                | `len(lista)`                            |
-| 2    | List object       | `Collectio` class                  | Mutable list with methods.      | –                                       |
+| 1    | Length            | `longitudo(lista)`                 | Returns integer.                | `len(lista)`                           |
+| 2    | List object       | `Collectio` class                  | Mutable list with methods.      | –                                      |
 
 ### 4.7. `dictio` – Dictionary
 
@@ -216,17 +216,17 @@ All operators use standard symbols. Latin names are not used for operators.
 
 ## 5. Design Notes
 
-| Topic | Note |
-| ----- | ---- |
-| `finis` | Reserved block-closing keyword (e.g., `finis munus`). Never use as a parameter or variable name. Use `terminus` for end-of-range values. |
-| `se` (self) | Latin reflexive pronoun — semantically accurate and intentional. |
-| `ortus` (extends) | Past participle of `oriri` — "having risen/been born from." Chosen for thematic richness. |
-| `file.claude()` | `claude` is the Latin imperative of `claudere` (to close/shut). Correct Latin; intentional. |
-| `ambitum` | Canonical Latin for "environment" (surroundings). Used in `cape_ambitum` / `pone_ambitum`; apply consistently to any new env-related names. |
-| `coniungere` | Used in both `filum` (string concat) and `collectio` (list concat). No collision — module-qualified at global scope (`filum.coniungere` vs `collectio.coniungere`). |
-| `addere` / `removere` | Used in both `collectio` and `dictio`. Module-qualified at global scope; no collision. |
-| `longitudo` | Used in both `filum` (string length) and `collectio` (list length). Module-qualified; no collision. |
-| `formare` vs `formare_tempus` | `filum.formare` = string format; `tempus.formare_tempus` = datetime format. Suffix kept to prevent global scope collision when both modules are imported. |
+| Topic                         | Note                                                                                                                                                                |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `finis`                       | Reserved block-closing keyword (e.g., `finis munus`). Never use as a parameter or variable name. Use `terminus` for end-of-range values.                            |
+| `se` (self)                   | Latin reflexive pronoun — semantically accurate and intentional.                                                                                                    |
+| `ortus` (extends)             | Past participle of `oriri` — "having risen/been born from." Chosen for thematic richness.                                                                           |
+| `file.claude()`               | `claude` is the Latin imperative of `claudere` (to close/shut). Correct Latin; intentional.                                                                         |
+| `ambitum`                     | Canonical Latin for "environment" (surroundings). Used in `cape_ambitum` / `pone_ambitum`; apply consistently to any new env-related names.                         |
+| `coniungere`                  | Used in both `filum` (string concat) and `collectio` (list concat). No collision — module-qualified at global scope (`filum.coniungere` vs `collectio.coniungere`). |
+| `addere` / `removere`         | Used in both `collectio` and `dictio`. Module-qualified at global scope; no collision.                                                                              |
+| `longitudo`                   | Used in both `filum` (string length) and `collectio` (list length). Module-qualified; no collision.                                                                 |
+| `formare` vs `formare_tempus` | `filum.formare` = string format; `tempus.formare_tempus` = datetime format. Suffix kept to prevent global scope collision when both modules are imported.           |
 
 ---
 
